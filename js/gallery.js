@@ -54,7 +54,7 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'insert_url_here_to_image_json';
+var mUrl = 'images. json';
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -93,9 +93,9 @@ function fetchJSON() {
 	mRequest.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 		   // Typical action to be performed when the document is ready:
-		   document.getElementById("demo").innerHTML = xhttp.responseText;
+		   document.getElementById("demo").innerHTML = mRequest.responseText;
 		}
 	};
-	mRequest.open("GET", "filename", true);
+	mRequest.open("GET", mUrl, true);
 	mRequest.send();
 }
